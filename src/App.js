@@ -13,6 +13,9 @@ const cardImages = [
 
 
 function App() {
+
+  const [cards, setCards] = useState([])
+  const [turns, setTurns] = useState(0)
   return (
     <div>
       <h1>Memory game</h1>
