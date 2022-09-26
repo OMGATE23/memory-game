@@ -2,12 +2,12 @@ import './App.css';
 import { useEffect, useState } from 'react';
 
 const cardImages = [
-  { src : './project-images/image-1.png'},
-  { src : './project-images/image-2.png'},
-  { src : './project-images/image-3.png'},
-  { src : './project-images/image-4.png'},
-  { src : './project-images/image-5.png'},
-  { src : './project-images/image-6.png'}
+  { "src" : './project-images/image-1.png'},
+  { "src" : './project-images/image-2.png'},
+  { "src" : './project-images/image-3.png'},
+  { "src" : './project-images/image-4.png'},
+  { "src" : './project-images/image-5.png'},
+  { "src" : './project-images/image-6.png'}
 ]
 
 
@@ -18,11 +18,12 @@ function App() {
 
   function shuffleCards(){
     let cardList = [...cardImages, ...cardImages]
-    console.log(cardList)
-
     cardList
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({...card, id: Math.random()}))
+      .map((card) => {
+        let randomID = Math.random()
+        return card.id = randomID
+      })
 
      console.log(cardList)
   }
@@ -30,6 +31,7 @@ function App() {
   useEffect(() => {
     shuffleCards()
   })
+
   return (
     <div>
       <h1>Memory game</h1>
