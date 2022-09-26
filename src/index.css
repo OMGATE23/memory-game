@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  --sky-50:#f0f9ff;
+  --sky-100: #e0f2fe;
+  --sky-200: #bae6fd;
+  --sky-300: #7dd3fc;
+  --sky-400: #38bdf8;
+  --sky-500: #0ea5e9;
+  --sky-600: #0284c7;
+  --sky-700: #0369a1;
+}
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 2rem;
+  background-color: var(--sky-500);
+  color: white;
+  padding: 1.5rem 0;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--sky-700);
+  background-color: var(--sky-500);
+  color: white;
+  font-size: bold;
+}
+
+button:hover {
+  background-color: var(--sky-700);
+}
+
