@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 :root {
   --sky-50:#f0f9ff;
@@ -14,31 +14,38 @@
 
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   margin: 0;
+  background-color: var(--sky-100);
 }
+
 
 h1 {
-  margin: 0;
-  margin-bottom: 2rem;
+  margin: 1.5rem;
   background-color: var(--sky-500);
   color: white;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  width: 350px;
 }
 
-button {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+.button {
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.1rem;
+  border: none;
   border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  border: 3px solid var(--sky-700);
-  background-color: var(--sky-500);
-  color: white;
-  font-size: bold;
+  box-shadow: 0px 0px 5px 25px rgba(0,0,0,0.0.75);
+  padding: 1rem;
+  background-color: var(--sky-300);
+  color: var(--sky-700);
+  font-weight: bold;
 }
 
-button:hover {
+.button:hover {
   background-color: var(--sky-700);
+  color: white;
+  cursor: pointer;
 }
 
