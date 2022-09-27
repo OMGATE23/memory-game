@@ -19,6 +19,7 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
   const [disable, setDisable] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   function shuffleCards(){
     let cardList = [...cardImages, ...cardImages]
@@ -70,12 +71,31 @@ function App() {
     setDisable(false)
   }
 
+  function checkComplete(){
+    if(cards.length){
+      for(let i =0; i<cards.length; i++){
+        if(!cards[i].matched){
+          return false
+          break;
+        }
+      }
+  
+      return true
+    }
+  }
+  useEffect(() => {
+    setShowModal(checkComplete())
+    
+  }, [turns])
+
   return (
     <div>
-      <h1>Memory game</h1>
-      <button onClick={shuffleCards}>Start new game</button>
+      <header className='header'>
+        <h1>Memory game</h1>
+        <button className='button' onClick={shuffleCards}>Start new game</button>
+      </header>
 
-      <p>Turns taken: {turns}</p>
+      <p className='turns-p'>Turns taken: {turns}</p>
       <div className='grid-div'>
          {cards && cards.map((card => (
           <div key={card.id}>
@@ -88,6 +108,24 @@ function App() {
           </div>
         )))} 
       </div>
+
+      {showModal && <div className='modal-backdrop'>
+        <div className='modal'>
+          <h2>Hooray! you have won!</h2>
+          <a href='https://twitter.com/om_gate'>Follow me on Twitter <i class="fa-brands fa-twitter"></i></a>
+          <a href='https://www.linkedin.com/in/om-gate-68a5a3201/'>Let's connect on LinkedIn   <i class="fa-brands fa-linkedin"></i></a>
+          <button onClick={() => {
+            shuffleCards();
+            setShowModal(false)
+          }}>Exit</button>
+        </div>
+      </div>}
+
+      <footer>
+        <p>Made my Om Gate</p>
+        <a href='https://twitter.com/om_gate'><i class="fa-brands fa-twitter"></i></a>
+        <a href='https://www.linkedin.com/in/om-gate-68a5a3201/'><i class="fa-brands fa-linkedin"></i></a>
+      </footer>
     </div>
   );
 }
