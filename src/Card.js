@@ -12,7 +12,7 @@ export default function Card({card, handleChoice, flipped, disable}) {
         <div className={flipped ? 'flipped' : ""}>
             <img src= {card.src} alt='front' className='front'/>
             <img 
-                src= './project-images/cover.png' 
+                src= './project-images/cover-image.png' 
                 alt='back'
                 onClick={clickHandler}
                 className ="back"
