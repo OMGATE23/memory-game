@@ -108,3 +108,43 @@ footer i {
   font-size: 1.5rem;
 }
 
+@media(max-width:900px){
+  img {
+    width: 150px;
+  }
+
+  .grid-div {
+    width: 700px;
+  }
+
+  .modal {
+    top: 30%;
+    left: 10%;
+  }
+
+  .modal-backdrop{
+    height: 100%;
+  }
+}
+
+@media(max-width:700px){
+
+  .header {
+    flex-direction: column;
+    width: 400px;
+  }
+
+  .grid-div {
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+  }
+
+  .modal {
+    top: 30%;
+    left: 10%;
+  }
+
+  .modal-backdrop{
+    height: 110%;
+  }
+}
