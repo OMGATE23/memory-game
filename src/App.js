@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import Card from './Card';
+import  ReactDOM  from 'react-dom';
 
 const cardImages = [
   { "src" : './project-images/image-1.png', matched: false},
@@ -109,17 +110,19 @@ function App() {
         )))} 
       </div>
 
-      {showModal && <div className='modal-backdrop'>
-        <div className='modal'>
-          <h2>Hooray! you have won!</h2>
-          <a href='https://twitter.com/om_gate'>Follow me on Twitter <i class="fa-brands fa-twitter"></i></a>
-          <a href='https://www.linkedin.com/in/om-gate-68a5a3201/'>Let's connect on LinkedIn   <i class="fa-brands fa-linkedin"></i></a>
-          <button onClick={() => {
-            shuffleCards();
-            setShowModal(false)
-          }}>Exit</button>
-        </div>
-      </div>}
+      {showModal && 
+        ReactDOM.createPortal((<div className='modal-backdrop'>
+          <div className='modal'>
+            <h2>Hooray! you have won!</h2>
+            <a href='https://twitter.com/om_gate'>Follow me on Twitter <i class="fa-brands fa-twitter"></i></a>
+            <a href='https://www.linkedin.com/in/om-gate-68a5a3201/'>Let's connect on LinkedIn   <i class="fa-brands fa-linkedin"></i></a>
+            <button onClick={() => {
+              shuffleCards();
+              setShowModal(false)
+            }}>Exit</button>
+          </div>
+        </div>), document.body)
+      }
 
       <footer>
         <p>Made my Om Gate</p>
